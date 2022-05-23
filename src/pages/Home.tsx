@@ -1,7 +1,14 @@
-import React from "react";
+import { FC } from "react";
+import HorizontalNavbar from "../components/layout/HorizontalNavbar";
+import VerticalNavbar from "../components/layout/VerticalNavbar";
 
-const Home = () => {
-  return <div>Home</div>;
+const Home: FC = () => {
+  return (
+    <>
+      <HorizontalNavbar />
+      <VerticalNavbar />
+    </>
+  );
 };
 
 export default Home;
