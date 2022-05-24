@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 import logo from "../../assets/logo.svg";
 import styles from "./HorizontalNavbar.module.css";
 
-const HorizontalNavbar: FC = () => {
+const HorizontalNavbar: FC = (): JSX.Element => {
   const navListItems: string[] = ["Accueil", "Profil", "Réglage", "Communauté"];
   return (
     <header className={styles.header}>

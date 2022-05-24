@@ -1,3 +1,6 @@
+/**
+ * Mock API data
+ */
 const USER_MAIN_DATA = [
   {
     id: 12,

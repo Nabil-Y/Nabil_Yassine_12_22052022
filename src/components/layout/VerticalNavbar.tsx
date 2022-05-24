@@ -3,7 +3,7 @@ import IconCard from "../UI/IconCard";
 import icons from "../../assets/navbar-icons/NavbarIcons";
 import styles from "./VerticalNavbar.module.css";
 
-const VerticalNavbar: FC = () => {
+const VerticalNavbar: FC = (): JSX.Element => {
   return (
     <section className={styles["side-navbar"]}>
       <div className={styles["icon-cards-container"]}>
