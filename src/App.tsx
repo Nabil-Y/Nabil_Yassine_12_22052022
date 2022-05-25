@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import MockApi from "./utils/mock-api";
 
@@ -8,9 +9,9 @@ import MockApi from "./utils/mock-api";
  */
 const App: FC = (): JSX.Element => {
   return (
-    <>
-      <Home />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 };
 

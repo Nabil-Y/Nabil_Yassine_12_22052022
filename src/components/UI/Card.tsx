@@ -1,12 +1,17 @@
 import { FC, ReactNode } from "react";
 import styles from "./Card.module.css";
 
-interface props {
+export type CardProps = {
   className?: string;
   children: ReactNode;
-}
+};
 
-const Card: FC<props> = ({ className, children }): JSX.Element => {
+/**
+ * Card UI Component
+ * @param props Props
+ * @returns Card
+ */
+const Card: FC<CardProps> = ({ className, children }): JSX.Element => {
   const classes: string = `${styles.card} ${className}`;
   return <div className={classes}>{children}</div>;
 };
