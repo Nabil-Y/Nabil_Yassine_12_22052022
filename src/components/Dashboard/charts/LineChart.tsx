@@ -1,6 +1,10 @@
-import React from "react";
+import { ReactElement } from "react";
 
-const LineChart = () => {
+/**
+ * LineChart Function
+ * @returns Line Chat component
+ */
+const LineChart = (): ReactElement => {
   return <div>LineChart</div>;
 };
 

@@ -1,6 +1,10 @@
-import React from "react";
+import { ReactElement } from "react";
 
-const SpiderChart = () => {
+/**
+ * SpiderChart Function
+ * @returns Spider Chart component
+ */
+const SpiderChart = (): ReactElement => {
   return <div>SpiderChart</div>;
 };
 

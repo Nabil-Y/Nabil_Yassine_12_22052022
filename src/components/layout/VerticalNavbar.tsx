@@ -1,13 +1,17 @@
-import { FC, ReactNode } from "react";
+import { ReactElement } from "react";
 import IconCard from "../UI/IconCard";
 import icons from "../../assets/navbar-icons/NavbarIcons";
 import styles from "./VerticalNavbar.module.css";
 
-const VerticalNavbar: FC = (): JSX.Element => {
+/**
+ * VerticalNavbar Function
+ * @returns vertical navbar component
+ */
+const VerticalNavbar = (): ReactElement => {
   return (
     <section className={styles["side-navbar"]}>
       <nav className={styles["icon-cards-container"]}>
-        {icons.map<ReactNode>((svg) => (
+        {icons.map<ReactElement>((svg) => (
           <IconCard key={svg} className={styles["side-icon-card"]}>
             <img src={svg} alt={svg.slice(svg.lastIndexOf("/") + 1)} />
           </IconCard>

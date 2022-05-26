@@ -1,13 +1,12 @@
-import { FC } from "react";
+import { ReactElement } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import MockApi from "./utils/mock-api";
 
 /**
- * App FC
+ * App Function
  * @returns the main content of the App
  */
-const App: FC = (): JSX.Element => {
+const App = (): ReactElement => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />

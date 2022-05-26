@@ -5,7 +5,7 @@ import data from "./mock-data";
  * @param id User id
  * @returns User data
  */
-const getUserMainDataById: Function = (id: Number) => {
+const getUserMainDataById = (id: Number) => {
   const filteredData = data.USER_MAIN_DATA.filter(
     (user) => user.id === id
   ).shift();
@@ -17,7 +17,7 @@ const getUserMainDataById: Function = (id: Number) => {
  * @param id User id
  * @returns User activity
  */
-const getUserActivityById: Function = (id: Number) => {
+const getUserActivityById = (id: Number) => {
   const filteredData = data.USER_ACTIVITY.filter(
     (user) => user.userId === id
   ).shift();
@@ -29,7 +29,7 @@ const getUserActivityById: Function = (id: Number) => {
  * @param id User id
  * @returns User average sessions
  */
-const getUserAverageSessionsById: Function = (id: Number) => {
+const getUserAverageSessionsById = (id: Number) => {
   const filteredData = data.USER_AVERAGE_SESSIONS.filter(
     (user) => user.userId === id
   ).shift();
@@ -41,7 +41,7 @@ const getUserAverageSessionsById: Function = (id: Number) => {
  * @param id User id
  * @returns User performance
  */
-const getUserPerformanceById: Function = (id: Number) => {
+const getUserPerformanceById = (id: Number) => {
   const filteredData = data.USER_PERFORMANCE.filter(
     (user) => user.userId === id
   ).shift();

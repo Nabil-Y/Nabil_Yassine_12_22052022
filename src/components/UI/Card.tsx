@@ -1,17 +1,12 @@
-import { FC, ReactNode } from "react";
+import { ReactElement } from "react";
 import styles from "./Card.module.css";
-
-export type CardProps = {
-  className?: string;
-  children: ReactNode;
-};
-
+import { cardProps } from "../../customTypes";
 /**
- * Card UI Component
- * @param props Props
- * @returns Card
+ * Card UI Function
+ * @param props Component properties
+ * @returns Card Component
  */
-const Card: FC<CardProps> = ({ className, children }): JSX.Element => {
+const Card = ({ className, children }: cardProps): ReactElement => {
   const classes: string = `${styles.card} ${className}`;
   return <div className={classes}>{children}</div>;
 };

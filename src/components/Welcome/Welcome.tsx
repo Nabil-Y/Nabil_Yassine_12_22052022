@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import { ReactElement } from "react";
 import styles from "./Welcome.module.css";
 
 /**
- * Welcome component
- * @returns Top section of main page content
+ * Welcome Function
+ * @returns Welcome Component (top section of main tag)
  */
-const Welcome: FC = (): JSX.Element => {
+const Welcome = (): ReactElement => {
   return (
     <section className={styles.welcome}>
       <h1 className={styles.title}>

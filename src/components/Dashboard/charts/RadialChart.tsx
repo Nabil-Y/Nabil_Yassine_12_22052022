@@ -1,6 +1,10 @@
-import React from "react";
+import { ReactElement } from "react";
 
-const RadialChart = () => {
+/**
+ * RadialChart Function
+ * @returns Radial Chart component
+ */
+const RadialChart = (): ReactElement => {
   return <div>RadialChart</div>;
 };
 

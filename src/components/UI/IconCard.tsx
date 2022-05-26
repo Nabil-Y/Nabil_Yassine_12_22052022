@@ -1,17 +1,13 @@
-import { FC, ReactNode } from "react";
+import { ReactElement } from "react";
 import styles from "./IconCard.module.css";
-
-export type IconCardProps = {
-  className?: string;
-  children: ReactNode;
-};
+import { cardProps } from "../../customTypes";
 
 /**
- * Icon Card UI Component
- * @param props Props
- * @returns Icon Card
+ * Icon Card UI Function
+ * @param props Component properties
+ * @returns Icon Card Component
  */
-const IconCard: FC<IconCardProps> = ({ className, children }): JSX.Element => {
+const IconCard = ({ className, children }: cardProps): ReactElement => {
   const classes: string = `${styles.card} ${className}`;
   return <div className={classes}>{children}</div>;
 };

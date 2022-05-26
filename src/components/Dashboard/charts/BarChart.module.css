@@ -1,0 +1,7 @@
+.bar-chart {
+  display: grid;
+  place-items: center;
+  background: dodgerblue;
+  height: 320px;
+  width: 835px;
+}

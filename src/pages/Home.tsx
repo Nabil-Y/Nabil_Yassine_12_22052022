@@ -1,20 +1,22 @@
-import { FC } from "react";
+import { ReactElement } from "react";
 import HorizontalNavbar from "../components/layout/HorizontalNavbar";
 import VerticalNavbar from "../components/layout/VerticalNavbar";
 import Welcome from "../components/Welcome/Welcome";
+import Dashboard from "../components/Dashboard/Dashboard";
 import styles from "./Home.module.css";
 
 /**
- * Home Page FC
+ * Home Function
  * @returns the content of the home page
  */
-const Home: FC = (): JSX.Element => {
+const Home = (): ReactElement => {
   return (
     <>
       <HorizontalNavbar />
+      <VerticalNavbar />
       <main className={styles.main}>
-        <VerticalNavbar />
         <Welcome />
+        <Dashboard />
       </main>
     </>
   );

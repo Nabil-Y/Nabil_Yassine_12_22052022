@@ -1,7 +1,12 @@
-import React from "react";
+import { ReactElement } from "react";
+import styles from "./BarChart.module.css";
 
-const BarChart = () => {
-  return <div>BarChart</div>;
+/**
+ * BarChart
+ * @returns Bar Chart component
+ */
+const BarChart = (): ReactElement => {
+  return <div className={styles["bar-chart"]}>BarChart</div>;
 };
 
 export default BarChart;
