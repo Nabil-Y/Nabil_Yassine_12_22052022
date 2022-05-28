@@ -4,9 +4,7 @@
 }
 
 .bottom-chart {
-  display: grid;
-  place-items: center;
-  background-color: goldenrod;
+  background-color: #282d30;
   height: 263px;
   width: 258px;
   margin-right: 30px;

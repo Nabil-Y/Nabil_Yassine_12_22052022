@@ -4,7 +4,6 @@ import VerticalNavbar from "../components/layout/VerticalNavbar";
 import Welcome from "../components/Welcome/Welcome";
 import Dashboard from "../components/Dashboard/Dashboard";
 import styles from "./Home.module.css";
-import Test from "../components/Dashboard/Test";
 
 /**
  * Home Function
@@ -19,7 +18,6 @@ const Home = (): ReactElement => {
         <Welcome />
         <Dashboard />
       </main>
-      <Test />
     </>
   );
 };
