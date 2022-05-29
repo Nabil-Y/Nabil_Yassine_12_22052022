@@ -15,3 +15,23 @@ export interface cardProps {
    */
   children: ReactNode;
 }
+
+/**
+ * Custom interface for API response of User Performance
+ */
+export interface userPerf {
+  userId: number;
+  kind: Record<number, string>;
+  data: {
+    value: number;
+    kind: number;
+  }[];
+}
+
+/**
+ * Custom interface to format userPerfData for chart component
+ */
+export interface userPerfData {
+  activity: string;
+  value: number;
+}

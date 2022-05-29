@@ -6,20 +6,21 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import MockApi from "../../../utils/mock-api";
+import { userPerf, userPerfData } from "../../../customTypes";
 
 /**
  * SpiderChart Function
  * @returns Spider Chart component
  */
 const SpiderChart = () => {
-  const userPerf = MockApi.getUserPerformanceById(12);
-  const formattedData: any[] = [];
+  const userPerf: userPerf = MockApi.getUserPerformanceById(12)!;
+  const formattedData: userPerfData[] = [];
 
   userPerf?.data.map((item) => {
     formattedData.push({
-      activity: userPerf.kind[item.kind as keyof {}],
+      activity: userPerf.kind[item.kind],
       value: item.value,
-    });
+    } as userPerfData);
   });
 
   return (
