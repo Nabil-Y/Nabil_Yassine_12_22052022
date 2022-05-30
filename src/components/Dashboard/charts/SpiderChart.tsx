@@ -1,6 +1,6 @@
 import { ReactElement, useContext } from "react";
 import Context from "../../../store/data-context";
-import { userPerformance, userPerformanceData } from "../../../customTypes";
+import { userPerformanceData } from "../../../customTypes";
 import {
   Radar,
   RadarChart,
@@ -15,8 +15,7 @@ import {
  */
 const SpiderChart = (): ReactElement => {
   const ctx = useContext(Context);
-  const userPerformance: userPerformance | undefined =
-    ctx.API.getUserPerformanceById(ctx.id);
+  const userPerformance = ctx.API.getUserPerformanceById(ctx.id);
   const formattedData: userPerformanceData[] = [];
 
   userPerformance?.data.map((item) => {

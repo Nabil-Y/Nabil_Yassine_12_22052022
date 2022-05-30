@@ -1,4 +1,10 @@
 import data from "./mock-data";
+import {
+  userMainData,
+  userActivity,
+  userPerformance,
+  userSessions,
+} from "../customTypes";
 
 /**
  * Gets User Main Data by user id
@@ -6,7 +12,7 @@ import data from "./mock-data";
  * @returns User data
  */
 const getUserMainDataById = (id: Number) => {
-  const filteredData = data.USER_MAIN_DATA.filter(
+  const filteredData: userMainData | undefined = data.USER_MAIN_DATA.filter(
     (user) => user.id === id
   ).shift();
   return filteredData;
@@ -18,7 +24,7 @@ const getUserMainDataById = (id: Number) => {
  * @returns User activity
  */
 const getUserActivityById = (id: Number) => {
-  const filteredData = data.USER_ACTIVITY.filter(
+  const filteredData: userActivity | undefined = data.USER_ACTIVITY.filter(
     (user) => user.userId === id
   ).shift();
   return filteredData;
@@ -30,9 +36,8 @@ const getUserActivityById = (id: Number) => {
  * @returns User average sessions
  */
 const getUserAverageSessionsById = (id: Number) => {
-  const filteredData = data.USER_AVERAGE_SESSIONS.filter(
-    (user) => user.userId === id
-  ).shift();
+  const filteredData: userSessions | undefined =
+    data.USER_AVERAGE_SESSIONS.filter((user) => user.userId === id).shift();
   return filteredData;
 };
 
@@ -42,9 +47,8 @@ const getUserAverageSessionsById = (id: Number) => {
  * @returns User performance
  */
 const getUserPerformanceById = (id: Number) => {
-  const filteredData = data.USER_PERFORMANCE.filter(
-    (user) => user.userId === id
-  ).shift();
+  const filteredData: userPerformance | undefined =
+    data.USER_PERFORMANCE.filter((user) => user.userId === id).shift();
   return filteredData;
 };
 

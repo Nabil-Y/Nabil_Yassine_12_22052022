@@ -46,7 +46,7 @@ export interface userMainData {
     lastName: string;
     age: number;
   };
-  todayScore: number;
+  score: number;
   keyData: Record<string, number>;
 }
 
