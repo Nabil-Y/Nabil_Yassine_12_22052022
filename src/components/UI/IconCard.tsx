@@ -8,7 +8,7 @@ import { cardProps } from "../../customTypes";
  * @returns Icon Card Component
  */
 const IconCard = ({ className, children }: cardProps): ReactElement => {
-  const classes: string = `${styles.card} ${className}`;
+  const classes: string = `${styles["icon-card"]} ${className}`;
   return <div className={classes}>{children}</div>;
 };
 
