@@ -10,16 +10,19 @@ import styles from "./BottomCharts.module.css";
  * @returns Bottom Charts component
  */
 const BottomCharts = (): ReactElement => {
-  const charts: ReactElement[] = [
-    <LineChart />,
-    <SpiderChart />,
-    <RadialChart />,
+  const charts: [ReactElement, string][] = [
+    [<LineChart />, "line-chart"],
+    [<SpiderChart />, "spider-chart"],
+    [<RadialChart />, "radial-chart"],
   ];
   return (
     <div className={styles["bottom-charts"]}>
-      {charts.map((chart, index) => (
-        <Card key={index + " bottom-chart"} className={styles["bottom-chart"]}>
-          {chart}
+      {charts.map((item) => (
+        <Card
+          key={item[1]}
+          className={`${styles["bottom-chart"]} ${styles[item[1]]}`}
+        >
+          {item[0]}
         </Card>
       ))}
     </div>

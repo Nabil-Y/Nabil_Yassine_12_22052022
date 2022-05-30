@@ -1,7 +1,5 @@
 .bar-chart {
-  display: grid;
-  place-items: center;
-  background: dodgerblue;
+  background: var(--grey-card-bg);
   height: 320px;
   width: 835px;
 }

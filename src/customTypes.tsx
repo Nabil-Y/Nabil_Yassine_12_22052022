@@ -19,7 +19,7 @@ export interface cardProps {
 /**
  * Custom interface for API response of User Performance
  */
-export interface userPerf {
+export interface userPerformance {
   userId: number;
   kind: Record<number, string>;
   data: {
@@ -31,7 +31,44 @@ export interface userPerf {
 /**
  * Custom interface to format userPerfData for chart component
  */
-export interface userPerfData {
+export interface userPerformanceData {
   activity: string;
   value: number;
+}
+
+/**
+ * Custom interface for API response of User Main Data
+ */
+export interface userMainData {
+  id: number;
+  userInfos: {
+    firstName: string;
+    lastName: string;
+    age: number;
+  };
+  todayScore: number;
+  keyData: Record<string, number>;
+}
+
+/**
+ * Custom interface for API response of User Activity
+ */
+export interface userActivity {
+  userId: number;
+  sessions: {
+    day: string;
+    kilogram: number;
+    calories: number;
+  }[];
+}
+
+/**
+ * Custom interface for API response of User Sessions
+ */
+export interface userSessions {
+  userId: number;
+  sessions: {
+    day: number;
+    sessionLength: number;
+  }[];
 }

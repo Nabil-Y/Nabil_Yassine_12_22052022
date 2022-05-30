@@ -4,7 +4,7 @@
 }
 
 .bottom-chart {
-  background-color: #282d30;
+  position: relative;
   height: 263px;
   width: 258px;
   margin-right: 30px;
@@ -12,4 +12,16 @@
 
 .bottom-chart:last-child {
   margin-right: 0;
+}
+
+.spider-chart {
+  background-color: #282d30;
+}
+
+.line-chart {
+  background-color: #ff0000;
+}
+
+.radial-chart {
+  background-color: var(--grey-card-bg);
 }

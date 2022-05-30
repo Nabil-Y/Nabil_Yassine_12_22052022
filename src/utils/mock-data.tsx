@@ -9,7 +9,7 @@ const USER_MAIN_DATA = [
       lastName: "Odama",
       age: 41,
     },
-    todayScore: 0.2,
+    score: 0.2,
     keyData: {
       calorieCount: 2030,
       proteinCount: 215,

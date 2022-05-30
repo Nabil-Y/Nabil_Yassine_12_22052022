@@ -1,3 +1,6 @@
+import { ReactElement, useContext } from "react";
+import Context from "../../../store/data-context";
+import { userPerformance, userPerformanceData } from "../../../customTypes";
 import {
   Radar,
   RadarChart,
@@ -5,22 +8,22 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
-import MockApi from "../../../utils/mock-api";
-import { userPerf, userPerfData } from "../../../customTypes";
 
 /**
  * SpiderChart Function
  * @returns Spider Chart component
  */
-const SpiderChart = () => {
-  const userPerf: userPerf = MockApi.getUserPerformanceById(12)!;
-  const formattedData: userPerfData[] = [];
+const SpiderChart = (): ReactElement => {
+  const ctx = useContext(Context);
+  const userPerformance: userPerformance | undefined =
+    ctx.API.getUserPerformanceById(ctx.id);
+  const formattedData: userPerformanceData[] = [];
 
-  userPerf?.data.map((item) => {
+  userPerformance?.data.map((item) => {
     formattedData.push({
-      activity: userPerf.kind[item.kind],
+      activity: userPerformance.kind[item.kind],
       value: item.value,
-    } as userPerfData);
+    } as userPerformanceData);
   });
 
   return (
