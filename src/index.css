@@ -17,7 +17,6 @@
 
 :root {
   --primary-color: #ff0101;
-  --body-bg: #e5e5e5;
   --grey-card-bg: #fbfbfb;
   --black-bg: #020203;
   --grey-text: #74798c;
@@ -36,7 +35,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
-  background-color: var(--body-bg);
+  background-color: var(--white);
 }
 
 a {
