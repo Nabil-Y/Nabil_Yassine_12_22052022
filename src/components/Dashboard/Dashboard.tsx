@@ -1,12 +1,11 @@
 import { ReactElement } from "react";
-import DataContext from "../../store/data-context";
 import NutritionInfo from "./NutritionInfo/NutritionInfo";
-import BarChart from "./Charts/BarChart";
+import BarChart from "./charts/BarChart";
 import styles from "./Dashboard.module.css";
 import Card from "../UI/Card";
-import LineChart from "./Charts/LineChart";
-import SpiderChart from "./Charts/SpiderChart";
-import RadialChart from "./Charts/RadialChart";
+import LineChart from "./charts/LineChart";
+import SpiderChart from "./charts/SpiderChart";
+import RadialChart from "./charts/RadialChart";
 
 /**
  * Dashboard Function
