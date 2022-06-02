@@ -1,5 +1,6 @@
 import { ReactElement, useContext } from "react";
-import Context from "../../../store/data-context";
+import DataContext from "../../../store/data-context";
+import API from "../../../utils/API";
 import { ResponsiveContainer, PieChart, Pie } from "recharts";
 import styles from "./RadialChart.module.css";
 
@@ -8,10 +9,10 @@ import styles from "./RadialChart.module.css";
  * @returns Radial Chart component
  */
 const RadialChart = (): ReactElement => {
-  const ctx = useContext(Context);
-  const userScore: number | undefined = ctx.API.getUserMainDataById(
-    ctx.id
-  )?.score;
+  const ctx = useContext(DataContext);
+  const userId = ctx.id;
+  const response = API.getUserMainDataById(userId);
+  const userScore: number | undefined = response.getScore();
   const formattedData = [
     {
       name: "Score",

@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import styles from "./HorizontalNavbar.module.css";
 
@@ -7,12 +8,15 @@ import styles from "./HorizontalNavbar.module.css";
  * @returns Horizontal Navbar component
  */
 const HorizontalNavbar = (): ReactElement => {
-  const navListItems: string[] = ["Accueil", "Profil", "Réglage", "Communauté"];
+  const navListItems: string[] = ["Profil", "Réglage", "Communauté"];
   return (
     <header className={styles.header}>
       <img src={logo} alt="SportSee Logo" />
       <nav>
         <ul>
+          <li>
+            <Link to="/">Accueil</Link>
+          </li>
           {navListItems.map<ReactElement>((item) => (
             <li key={item}>{item}</li>
           ))}

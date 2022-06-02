@@ -1,13 +1,13 @@
 import { createContext } from "react";
-import MockApi from "../utils/mock-api";
+import API from "../utils/API";
 
 /**
  * App context for the main content
  */
 const DataContext = createContext({
-  id: 12,
-  setId: () => {},
-  API: MockApi,
+  id: 0,
+  isAPI: false,
+  DataAPI: API,
 });
 
 export default DataContext;

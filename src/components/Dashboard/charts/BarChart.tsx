@@ -1,4 +1,6 @@
-import { ReactElement } from "react";
+import { ReactElement, useContext } from "react";
+import DataContext from "../../../store/data-context";
+import API from "../../../utils/API";
 import styles from "./BarChart.module.css";
 
 /**

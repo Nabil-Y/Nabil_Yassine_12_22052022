@@ -1,5 +1,6 @@
 import { ReactElement, useContext } from "react";
-import Context from "../../../store/data-context";
+import DataContext from "../../../store/data-context";
+import API from "../../../utils/API";
 import NutritionCard from "./NutritionCard";
 import icons from "../../../assets/nutrition-icons/NutritionIcons";
 import styles from "./NutritionInfo.module.css";
@@ -9,9 +10,10 @@ import styles from "./NutritionInfo.module.css";
  * @returns Nutrition Info Component
  */
 const NutritionInfo = (): ReactElement => {
-  const ctx = useContext(Context);
+  const ctx = useContext(DataContext);
+  const userId = ctx.id;
   const userKeyData: Record<string, number> | undefined =
-    ctx.API.getUserMainDataById(ctx.id)?.keyData;
+    API.getUserMainDataById(userId)?.keyData;
 
   const formattedData: Record<string, string>[] = [];
   const iconLabels: string[] = [

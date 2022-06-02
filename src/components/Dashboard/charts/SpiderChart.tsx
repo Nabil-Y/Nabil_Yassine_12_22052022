@@ -1,5 +1,6 @@
 import { ReactElement, useContext } from "react";
-import Context from "../../../store/data-context";
+import DataContext from "../../../store/data-context";
+import API from "../../../utils/API";
 import { userPerformanceData } from "../../../customTypes";
 import {
   Radar,
@@ -14,13 +15,16 @@ import {
  * @returns Spider Chart component
  */
 const SpiderChart = (): ReactElement => {
-  const ctx = useContext(Context);
-  const userPerformance = ctx.API.getUserPerformanceById(ctx.id);
-  const formattedData: userPerformanceData[] = [];
+  const ctx = useContext(DataContext);
+  const userId = ctx.id;
+  const response = API.getUserPerformanceById(userId);
+  const activities = response.getKind();
+  const userPerformance = response.getData();
 
-  userPerformance?.data.map((item) => {
+  const formattedData: userPerformanceData[] = [];
+  userPerformance?.map((item) => {
     formattedData.push({
-      activity: userPerformance.kind[item.kind],
+      activity: activities![item.kind],
       value: item.value,
     } as userPerformanceData);
   });

@@ -54,6 +54,12 @@ button {
   border: none;
 }
 
+main {
+  height: calc(100vh - 91px);
+  margin-left: 117px;
+  padding: 68px 90px 86px 107px;
+}
+
 /* 2- Utility Classes */
 
 .sr-only {

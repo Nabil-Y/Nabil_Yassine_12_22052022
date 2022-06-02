@@ -1,6 +1,10 @@
 import { ReactElement } from "react";
 import { Routes, Route } from "react-router-dom";
+import HorizontalNavbar from "./components/layout/HorizontalNavbar";
+import VerticalNavbar from "./components/layout/VerticalNavbar";
 import Home from "./pages/Home";
+import User from "./pages/User";
+import Error from "./pages/Error";
 
 /**
  * App Function
@@ -8,9 +12,15 @@ import Home from "./pages/Home";
  */
 const App = (): ReactElement => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+    <>
+      <HorizontalNavbar />
+      <VerticalNavbar />
+      <Routes>
+        <Route path="/user/:userId" element={<User />} />
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </>
   );
 };
 

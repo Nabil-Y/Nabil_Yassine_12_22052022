@@ -1,5 +1,6 @@
 import { ReactElement, useContext } from "react";
-import Context from "../../../store/data-context";
+import DataContext from "../../../store/data-context";
+import API from "../../../utils/API";
 import { userSessions } from "../../../customTypes";
 import {
   Radar,
@@ -14,7 +15,6 @@ import {
  * @returns Line Chat component
  */
 const LineChart = (): ReactElement => {
-  const ctx = useContext(Context);
   return <div>LineChart</div>;
 };
 

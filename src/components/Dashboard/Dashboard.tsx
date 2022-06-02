@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import DataContext from "../../store/data-context";
 import NutritionInfo from "./NutritionInfo/NutritionInfo";
 import BarChart from "./Charts/BarChart";
 import styles from "./Dashboard.module.css";

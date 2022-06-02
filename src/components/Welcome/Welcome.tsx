@@ -1,17 +1,17 @@
 import { ReactElement, useContext } from "react";
-import Context from "../../store/data-context";
+import API from "../../utils/API";
+import DataContext from "../../store/data-context";
 import styles from "./Welcome.module.css";
 
 /**
  * Welcome Function
  * @returns Welcome Component (top section of main tag)
  */
-const Welcome = (props: { onClick: () => void }): ReactElement => {
-  const ctx = useContext(Context);
-  const firstName: string | undefined = ctx.API.getUserMainDataById(ctx.id)
-    ?.userInfos.firstName;
+const Welcome = (): ReactElement => {
+  const ctx = useContext(DataContext);
+  const response = API.getUserMainDataById(ctx.id);
+  const firstName = response.getFirstName();
 
-  // const firstName: string = ;
   return (
     <section className={styles.welcome}>
       <h1 className={styles.title}>
@@ -20,7 +20,7 @@ const Welcome = (props: { onClick: () => void }): ReactElement => {
           {firstName ? firstName : "Visiteur"}
         </span>
       </h1>
-      <div className={styles.info} onClick={props.onClick}>
+      <div className={styles.info}>
         Félicitation ! Vous avez explosé vos objectifs hier 👏
       </div>
     </section>
