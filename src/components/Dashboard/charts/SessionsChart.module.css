@@ -1,0 +1,8 @@
+.title {
+  position: absolute;
+  top: 29px;
+  left: 34px;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--white);
+}

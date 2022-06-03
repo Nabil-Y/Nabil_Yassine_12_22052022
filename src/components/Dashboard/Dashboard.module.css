@@ -29,7 +29,8 @@
   background-color: #282d30;
 }
 
-.line-chart {
+.sessions-chart {
+  position: relative;
   background-color: #ff0000;
 }
 

@@ -7,7 +7,6 @@ import API from "../utils/API";
 const DataContext = createContext({
   id: 0,
   isAPI: false,
-  DataAPI: API,
 });
 
 export default DataContext;

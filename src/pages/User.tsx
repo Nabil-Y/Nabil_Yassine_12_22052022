@@ -16,7 +16,7 @@ const User = (): ReactElement => {
 
   return (
     <main>
-      <Context.Provider value={{ id: id, isAPI: isAPI, DataAPI: API }}>
+      <Context.Provider value={{ id: id, isAPI: isAPI }}>
         <Welcome />
         <Dashboard />
       </Context.Provider>

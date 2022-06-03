@@ -1,7 +1,6 @@
 import { ReactElement, useContext } from "react";
 import DataContext from "../../../store/data-context";
 import API from "../../../utils/API";
-import { userPerformanceData } from "../../../customTypes";
 import {
   Radar,
   RadarChart,
@@ -21,17 +20,16 @@ const SpiderChart = (): ReactElement => {
   const activities = response.getKind();
   const userPerformance = response.getData();
 
-  const formattedData: userPerformanceData[] = [];
-  userPerformance?.map((item) => {
-    formattedData.push({
+  const formattedData = userPerformance?.map((item) => {
+    return {
       activity: activities![item.kind],
       value: item.value,
-    } as userPerformanceData);
+    };
   });
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <RadarChart outerRadius={90} data={formattedData.reverse()}>
+      <RadarChart outerRadius={90} data={formattedData?.reverse()}>
         <PolarGrid radialLines={false} stroke="#FFFFFF" />
         <PolarAngleAxis
           dy={2}

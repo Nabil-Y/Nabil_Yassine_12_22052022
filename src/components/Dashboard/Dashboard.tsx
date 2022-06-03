@@ -3,7 +3,7 @@ import NutritionInfo from "./NutritionInfo/NutritionInfo";
 import BarChart from "./charts/BarChart";
 import styles from "./Dashboard.module.css";
 import Card from "../UI/Card";
-import LineChart from "./charts/LineChart";
+import SessionsChart from "./charts/SessionsChart";
 import SpiderChart from "./charts/SpiderChart";
 import RadialChart from "./charts/RadialChart";
 
@@ -13,7 +13,7 @@ import RadialChart from "./charts/RadialChart";
  */
 const Dashboard = (): ReactElement => {
   const bottomCharts: [ReactElement, string][] = [
-    [<LineChart />, "line-chart"],
+    [<SessionsChart />, "sessions-chart"],
     [<SpiderChart />, "spider-chart"],
     [<RadialChart />, "radial-chart"],
   ];
