@@ -1,11 +1,12 @@
 .dashboard {
   display: flex;
   width: 100%;
-  height: 100%;
+
   padding-top: 77px;
 }
 
 .dashboard-left {
+  width: min(835px, 100%);
   margin-right: 31px;
 }
 
@@ -36,4 +37,20 @@
 
 .radial-chart {
   background-color: var(--grey-card-bg);
+}
+
+@media screen and (max-width: 1400px) {
+  .dashboard {
+    padding-top: 20px;
+  }
+  .dashboard-left {
+    width: 640px;
+    height: 280px;
+    margin-right: 24px;
+  }
+  .bottom-chart {
+    height: 200px;
+    width: 200px;
+    margin-right: 20px;
+  }
 }

@@ -61,6 +61,12 @@ main {
   padding: 68px 90px 86px 107px;
 }
 
+@media screen and (max-width: 1400px) {
+  main {
+    padding: 30px;
+  }
+}
+
 /* 2- Utility Classes */
 
 .sr-only {

@@ -9,8 +9,6 @@ import Dashboard from "../components/Dashboard/Dashboard";
  * @returns the main content of the user page
  */
 const User = (): ReactElement => {
-  const { userId } = useParams() as { userId: string };
-  const [id, setId] = useState(+userId);
   const [isAPI, setIsAPI] = useState(false);
 
   /**
@@ -22,7 +20,7 @@ const User = (): ReactElement => {
 
   return (
     <main>
-      <Context.Provider value={{ id: id, isAPI: isAPI }}>
+      <Context.Provider value={{ isAPI: isAPI }}>
         <button className="context-switch" onClick={clickHandler}>
           {isAPI ? "API" : "Mock"}
         </button>

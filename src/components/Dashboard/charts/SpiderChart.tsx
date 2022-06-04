@@ -1,5 +1,5 @@
-import { ReactElement, useContext } from "react";
-import DataContext from "../../../store/data-context";
+import { ReactElement } from "react";
+import { useParams } from "react-router-dom";
 import API from "../../../utils/API";
 import {
   Radar,
@@ -14,9 +14,8 @@ import {
  * @returns Spider Chart component
  */
 const SpiderChart = (): ReactElement => {
-  const ctx = useContext(DataContext);
-  const userId = ctx.id;
-  const response = API.getUserPerformanceById(userId);
+  const { userId } = useParams() as { userId: string };
+  const response = API.getUserPerformanceById(+userId);
   const activities = response.getKind();
   const userPerformance = response.getData();
 
@@ -29,7 +28,10 @@ const SpiderChart = (): ReactElement => {
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <RadarChart outerRadius={90} data={formattedData?.reverse()}>
+      <RadarChart
+        outerRadius={window.innerWidth > 1400 ? 90 : 65}
+        data={formattedData?.reverse()}
+      >
         <PolarGrid radialLines={false} stroke="#FFFFFF" />
         <PolarAngleAxis
           dy={2}
@@ -37,7 +39,7 @@ const SpiderChart = (): ReactElement => {
           stroke="#FFFFFF"
           tickLine={false}
           tick={{
-            fontSize: 12,
+            fontSize: window.innerWidth > 1400 ? 12 : 10,
             fontWeight: 500,
           }}
         />

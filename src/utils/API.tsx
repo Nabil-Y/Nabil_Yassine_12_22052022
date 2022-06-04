@@ -11,7 +11,6 @@ import {
   SessionsResponse,
   ActivityResponse,
 } from "./Classes";
-import axios from "axios";
 
 /**
  * Gets User Main Data by user id
@@ -64,12 +63,4 @@ export default {
   getUserActivityById,
   getUserAverageSessionsById,
   getUserPerformanceById,
-};
-
-export const fetchData = async (url: string) => {
-  try {
-    return await axios.get(url).then((res) => res.data.data);
-  } catch (error) {
-    console.log(error);
-  }
 };

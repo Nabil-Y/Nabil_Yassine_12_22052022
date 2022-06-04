@@ -1,4 +1,4 @@
 .nutrition__info {
-  height: 613px;
-  width: 258px;
+  height: 100%;
+  width: min(258px, 100%);
 }

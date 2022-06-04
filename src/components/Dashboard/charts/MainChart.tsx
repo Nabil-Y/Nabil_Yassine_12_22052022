@@ -1,5 +1,5 @@
-import { ReactElement, useContext } from "react";
-import DataContext from "../../../store/data-context";
+import { ReactElement } from "react";
+import { useParams } from "react-router-dom";
 import API from "../../../utils/API";
 import styles from "./MainChart.module.css";
 import {
@@ -17,9 +17,8 @@ import {
  * @returns Main Chart component
  */
 const MainChart = (): ReactElement => {
-  const ctx = useContext(DataContext);
-  const userId = ctx.id;
-  const response = API.getUserActivityById(userId);
+  const { userId } = useParams() as { userId: string };
+  const response = API.getUserActivityById(+userId);
   const formattedData = response.sessions?.map((item, index) => {
     return {
       ...item,
@@ -36,8 +35,9 @@ const MainChart = (): ReactElement => {
           <span className={styles.calories}>{"Calories brûlées (kCal)"}</span>
         </div>
       </section>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="99%" height="100%">
         <BarChart
+          width={window.screen.width}
           data={formattedData}
           barGap={10}
           barCategoryGap="35%"

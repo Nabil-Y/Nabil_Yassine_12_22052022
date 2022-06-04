@@ -1,5 +1,5 @@
-import { ReactElement, useContext } from "react";
-import DataContext from "../../../store/data-context";
+import { ReactElement } from "react";
+import { useParams } from "react-router-dom";
 import API from "../../../utils/API";
 import { ResponsiveContainer, PieChart, Pie } from "recharts";
 import styles from "./RadialChart.module.css";
@@ -9,9 +9,8 @@ import styles from "./RadialChart.module.css";
  * @returns Radial Chart component
  */
 const RadialChart = (): ReactElement => {
-  const ctx = useContext(DataContext);
-  const userId = ctx.id;
-  const response = API.getUserMainDataById(userId);
+  const { userId } = useParams() as { userId: string };
+  const response = API.getUserMainDataById(+userId);
   const userScore: number | undefined = response?.getScore();
   const formattedData = [
     {
@@ -29,8 +28,8 @@ const RadialChart = (): ReactElement => {
             dataKey="value"
             nameKey="name"
             fill="#FF0000"
-            innerRadius={80}
-            outerRadius={90}
+            innerRadius={window.innerWidth > 1400 ? 80 : 62}
+            outerRadius={window.innerWidth > 1400 ? 90 : 72}
             startAngle={90}
             endAngle={userScore ? 90 + userScore * 360 : 0}
             cornerRadius="50%"

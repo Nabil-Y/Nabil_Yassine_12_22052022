@@ -13,3 +13,18 @@
 .name {
   color: var(--primary-color);
 }
+
+@media screen and (max-width: 1400px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .info {
+    margin-top: 16px;
+    font-size: 15px;
+  }
+
+  .name {
+    color: var(--primary-color);
+  }
+}

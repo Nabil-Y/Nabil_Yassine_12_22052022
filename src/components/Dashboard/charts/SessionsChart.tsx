@@ -1,5 +1,5 @@
-import { ReactElement, useContext } from "react";
-import DataContext from "../../../store/data-context";
+import { ReactElement } from "react";
+import { useParams } from "react-router-dom";
 import API from "../../../utils/API";
 import {
   Line,
@@ -15,9 +15,8 @@ import styles from "./SessionsChart.module.css";
  * @returns Line Chat component
  */
 const SessionsChart = (): ReactElement => {
-  const ctx = useContext(DataContext);
-  const userId = ctx.id;
-  const response = API.getUserAverageSessionsById(userId);
+  const { userId } = useParams() as { userId: string };
+  const response = API.getUserAverageSessionsById(+userId);
 
   const days = ["L", "M", "M", "J", "V", "S", "D"];
   const formattedData = days.map((item, index) => {

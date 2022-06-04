@@ -34,3 +34,9 @@
   font-size: 12px;
   transform: rotate(-90deg) translateY(-50%);
 }
+
+@media screen and (max-width: 1400px) {
+  .icon-cards-container {
+    transform: translateY(-50px);
+  }
+}

@@ -1,8 +1,7 @@
 .nutrition-card {
   display: flex;
-
   align-items: center;
-  width: min(258px, 100%);
+  width: 258px;
   height: 124px;
   margin-top: 39px;
 
@@ -28,4 +27,25 @@
   font-weight: 700;
   font-size: 20px;
   color: var(--black-text);
+}
+
+@media screen and (max-width: 1400px) {
+  .nutrition-card {
+    width: 180px;
+    height: 110px;
+    margin-top: 36px;
+    font-size: 12px;
+  }
+
+  .icon-card {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 16px;
+  }
+
+  .value {
+    font-weight: 700;
+    font-size: 16px;
+  }
 }

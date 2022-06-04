@@ -1,17 +1,15 @@
-import { ReactElement, useContext } from "react";
+import { ReactElement } from "react";
 import API from "../../utils/API";
-import DataContext from "../../store/data-context";
+import { useParams } from "react-router-dom";
 import styles from "./Welcome.module.css";
-import { fetchData } from "../../utils/API";
 
 /**
  * Welcome Function
  * @returns Welcome Component (top section of main tag)
  */
 const Welcome = (): ReactElement => {
-  const ctx = useContext(DataContext);
-  const userId = ctx.id;
-  const response = API.getUserMainDataById(userId);
+  const { userId } = useParams() as { userId: string };
+  const response = API.getUserMainDataById(+userId);
   const firstName = response?.getFirstName();
 
   return (
