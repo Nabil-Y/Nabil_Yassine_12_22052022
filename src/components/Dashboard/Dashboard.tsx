@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import NutritionInfo from "./NutritionInfo/NutritionInfo";
-import BarChart from "./charts/BarChart";
+import MainChart from "./charts/MainChart";
 import styles from "./Dashboard.module.css";
 import Card from "../UI/Card";
 import SessionsChart from "./charts/SessionsChart";
@@ -20,7 +20,7 @@ const Dashboard = (): ReactElement => {
   return (
     <div className={styles.dashboard}>
       <div className={styles["dashboard-left"]}>
-        <BarChart />
+        <MainChart />
         <div className={styles["bottom-charts"]}>
           {bottomCharts.map((item) => (
             <Card

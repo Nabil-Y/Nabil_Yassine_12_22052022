@@ -12,7 +12,7 @@ const RadialChart = (): ReactElement => {
   const ctx = useContext(DataContext);
   const userId = ctx.id;
   const response = API.getUserMainDataById(userId);
-  const userScore: number | undefined = response.getScore();
+  const userScore: number | undefined = response?.getScore();
   const formattedData = [
     {
       name: "Score",

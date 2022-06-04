@@ -19,7 +19,7 @@ const SessionsChart = (): ReactElement => {
   const userId = ctx.id;
   const response = API.getUserAverageSessionsById(userId);
 
-  const days: string[] = ["L", "M", "M", "J", "V", "S", "D"];
+  const days = ["L", "M", "M", "J", "V", "S", "D"];
   const formattedData = days.map((item, index) => {
     return {
       name: item,
@@ -36,13 +36,17 @@ const SessionsChart = (): ReactElement => {
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={formattedData}
-          margin={{ top: 0, left: 15, right: 15, bottom: 15 }}
+          margin={{ top: 0, left: 15, right: 15, bottom: 10 }}
         >
           <XAxis
             dataKey="name"
             stroke="#FFF"
             tickLine={false}
             axisLine={false}
+            tick={{
+              fontSize: 12,
+              fontWeight: 500,
+            }}
           />
           <YAxis hide={true} padding={{ top: 80 }} />
           <Tooltip
@@ -63,8 +67,13 @@ const SessionsChart = (): ReactElement => {
             type="monotone"
             dataKey="value"
             stroke="#FFF"
+            strokeWidth={1.5}
             dot={false}
-            activeDot={true}
+            activeDot={{
+              stroke: "#FFF",
+              strokeOpacity: 0.4,
+              strokeWidth: 10,
+            }}
           />
         </LineChart>
       </ResponsiveContainer>

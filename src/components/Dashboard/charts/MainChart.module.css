@@ -1,0 +1,46 @@
+.main-chart {
+  background: var(--grey-card-bg);
+  height: 320px;
+  width: 835px;
+}
+
+.main-chart-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px 0;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.poids {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+}
+
+.poids::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--black-text);
+}
+.calories {
+  position: relative;
+}
+.calories::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}

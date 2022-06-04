@@ -2,6 +2,7 @@ import { ReactElement, useContext } from "react";
 import API from "../../utils/API";
 import DataContext from "../../store/data-context";
 import styles from "./Welcome.module.css";
+import { fetchData } from "../../utils/API";
 
 /**
  * Welcome Function
@@ -9,8 +10,9 @@ import styles from "./Welcome.module.css";
  */
 const Welcome = (): ReactElement => {
   const ctx = useContext(DataContext);
-  const response = API.getUserMainDataById(ctx.id);
-  const firstName = response.getFirstName();
+  const userId = ctx.id;
+  const response = API.getUserMainDataById(userId);
+  const firstName = response?.getFirstName();
 
   return (
     <section className={styles.welcome}>
