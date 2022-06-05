@@ -27,11 +27,8 @@ const SpiderChart = (): ReactElement => {
   });
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RadarChart
-        outerRadius={window.innerWidth > 1400 ? 90 : 65}
-        data={formattedData?.reverse()}
-      >
+    <ResponsiveContainer width="100%">
+      <RadarChart outerRadius="62%" data={formattedData?.reverse()}>
         <PolarGrid radialLines={false} stroke="#FFFFFF" />
         <PolarAngleAxis
           dy={2}
@@ -39,7 +36,7 @@ const SpiderChart = (): ReactElement => {
           stroke="#FFFFFF"
           tickLine={false}
           tick={{
-            fontSize: window.innerWidth > 1400 ? 12 : 10,
+            fontSize: 12,
             fontWeight: 500,
           }}
         />

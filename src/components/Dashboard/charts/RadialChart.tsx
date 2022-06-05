@@ -28,8 +28,8 @@ const RadialChart = (): ReactElement => {
             dataKey="value"
             nameKey="name"
             fill="#FF0000"
-            innerRadius={window.innerWidth > 1400 ? 80 : 62}
-            outerRadius={window.innerWidth > 1400 ? 90 : 72}
+            innerRadius="65%"
+            outerRadius="75%"
             startAngle={90}
             endAngle={userScore ? 90 + userScore * 360 : 0}
             cornerRadius="50%"

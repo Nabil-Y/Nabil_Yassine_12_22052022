@@ -56,6 +56,7 @@ button {
 
 main {
   position: relative;
+  width: calc(100vw - 117px);
   height: calc(100vh - 91px);
   margin-left: 117px;
   padding: 68px 90px 86px 107px;

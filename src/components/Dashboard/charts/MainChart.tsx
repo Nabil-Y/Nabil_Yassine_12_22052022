@@ -35,9 +35,8 @@ const MainChart = (): ReactElement => {
           <span className={styles.calories}>{"Calories brûlées (kCal)"}</span>
         </div>
       </section>
-      <ResponsiveContainer width="99%" height="100%">
+      <ResponsiveContainer width="100%">
         <BarChart
-          width={window.screen.width}
           data={formattedData}
           barGap={10}
           barCategoryGap="35%"
