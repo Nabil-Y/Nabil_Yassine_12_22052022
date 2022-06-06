@@ -26,7 +26,7 @@ export default class API {
     try {
       const url = isApi
         ? `${this.route}/user/${+userId}`
-        : "../../Mock-data/User-MainData.json";
+        : "/Mock-data/User-MainData.json";
       const response = await axios.get(url);
       const data = await response.data.data;
       return new MainDataResponse(data);
@@ -45,7 +45,7 @@ export default class API {
     try {
       const url = isApi
         ? `${this.route}/user/${+userId}/performance`
-        : "../../public/Mock-data/User-Performance.json";
+        : "/Mock-data/User-Performance.json";
       const response = await axios.get(url);
       const data = await response.data.data;
       return new PerformanceResponse(data);
@@ -64,7 +64,7 @@ export default class API {
     try {
       const url = isApi
         ? `${this.route}/user/${+userId}/average-sessions`
-        : "../../Mock-data/User-Sessions.json";
+        : "/Mock-data/User-Sessions.json";
       const response = await axios.get(url);
       const data = await response.data.data;
       return new SessionsResponse(data);
@@ -83,7 +83,7 @@ export default class API {
     try {
       const url = isApi
         ? `${this.route}/user/${+userId}/activity`
-        : "../../Mock-data/User-Activity.json";
+        : "/Mock-data/User-Activity.json";
       const response = await axios.get(url);
       const data = await response.data.data;
       return new ActivityResponse(data);
