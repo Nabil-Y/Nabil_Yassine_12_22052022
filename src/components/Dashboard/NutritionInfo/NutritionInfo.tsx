@@ -4,13 +4,14 @@ import API from "../../../utils/API";
 import NutritionCard from "./NutritionCard";
 import icons from "../../../assets/nutrition-icons/NutritionIcons";
 import styles from "./NutritionInfo.module.css";
-import { userMainData } from "../../../customInterfaces";
+import { userMainData } from "../../../utils/customInterfaces";
+import { MainDataResponse } from "../../../utils/Classes";
 
 /**
  * NutritionInfo Function
  * @returns Nutrition Info Component
  */
-const NutritionInfo = (props: { data: userMainData }): ReactElement => {
+const NutritionInfo = (props: { data: MainDataResponse }): ReactElement => {
   const { data } = props;
   const userKeyData = data.keyData;
 

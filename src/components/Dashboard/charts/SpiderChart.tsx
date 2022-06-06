@@ -6,13 +6,14 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
-import { userPerformance } from "../../../customInterfaces";
+import { userPerformance } from "../../../utils/customInterfaces";
+import { PerformanceResponse } from "../../../utils/Classes";
 
 /**
  * SpiderChart Function
  * @returns Spider Chart component
  */
-const SpiderChart = (props: { data: userPerformance }): ReactElement => {
+const SpiderChart = (props: { data: PerformanceResponse }): ReactElement => {
   const { data } = props;
   const activities = data.kind;
   const userPerformance = data.data;

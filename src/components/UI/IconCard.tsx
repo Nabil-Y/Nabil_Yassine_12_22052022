@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import styles from "./IconCard.module.css";
-import { cardProps } from "../../customInterfaces";
+import { cardProps } from "../../utils/customInterfaces";
 
 /**
  * Icon Card UI Function

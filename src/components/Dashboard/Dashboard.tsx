@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 import SessionsChart from "./charts/SessionsChart";
 import SpiderChart from "./charts/SpiderChart";
 import RadialChart from "./charts/RadialChart";
-import { userData } from "../../customInterfaces";
+import { userData } from "../../utils/customInterfaces";
 
 /**
  * /**

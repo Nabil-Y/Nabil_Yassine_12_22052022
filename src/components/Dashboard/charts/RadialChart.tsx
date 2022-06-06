@@ -1,13 +1,14 @@
 import { ReactElement } from "react";
 import { ResponsiveContainer, PieChart, Pie } from "recharts";
 import styles from "./RadialChart.module.css";
-import { userMainData } from "../../../customInterfaces";
+import { userMainData } from "../../../utils/customInterfaces";
+import { MainDataResponse } from "../../../utils/Classes";
 
 /**
  * RadialChart Function
  * @returns Radial Chart component
  */
-const RadialChart = (props: { data: userMainData }): ReactElement => {
+const RadialChart = (props: { data: MainDataResponse }): ReactElement => {
   const { data } = props;
   const userScore: number | undefined = data?.score;
   const formattedData = [

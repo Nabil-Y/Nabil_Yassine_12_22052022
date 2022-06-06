@@ -3,7 +3,7 @@ import {
   userActivity,
   userPerformance,
   userSessions,
-} from "../customInterfaces";
+} from "./customInterfaces";
 
 /**
  * Model Class to format User Main Data Response from API
@@ -46,18 +46,18 @@ export class MainDataResponse {
  * Model Class to format User Performance Data Response from API
  */
 export class PerformanceResponse {
-  public id;
+  public userId;
   public kind;
   public data;
 
   constructor(data: userPerformance | undefined) {
-    this.id = data?.userId;
+    this.userId = data?.userId;
     this.kind = data?.kind;
     this.data = data?.data;
   }
 
-  getId() {
-    return this.id;
+  getUserId() {
+    return this.userId;
   }
 
   getKind() {
@@ -73,16 +73,16 @@ export class PerformanceResponse {
  * Model Class to format User Activity Data Response from API
  */
 export class ActivityResponse {
-  public id;
+  public userId;
   public sessions;
 
   constructor(data: userActivity | undefined) {
-    this.id = data?.userId;
+    this.userId = data?.userId;
     this.sessions = data?.sessions;
   }
 
-  getId() {
-    return this.id;
+  getUserId() {
+    return this.userId;
   }
 
   getSessions() {
@@ -94,16 +94,16 @@ export class ActivityResponse {
  * Model Class to format User Sessions Data Response from API
  */
 export class SessionsResponse {
-  public id;
+  public userId;
   public sessions;
 
   constructor(data: userSessions | undefined) {
-    this.id = data?.userId;
+    this.userId = data?.userId;
     this.sessions = data?.sessions;
   }
 
-  getId() {
-    return this.id;
+  getUserId() {
+    return this.userId;
   }
 
   getSessions() {

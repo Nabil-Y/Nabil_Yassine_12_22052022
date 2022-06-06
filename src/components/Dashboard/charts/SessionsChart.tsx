@@ -8,12 +8,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import styles from "./SessionsChart.module.css";
-import { userSessions } from "../../../customInterfaces";
+import { userSessions } from "../../../utils/customInterfaces";
+import { SessionsResponse } from "../../../utils/Classes";
 /**
  * LineChart Function
  * @returns Line Chat component
  */
-const SessionsChart = (props: { data: userSessions }): ReactElement => {
+const SessionsChart = (props: { data: SessionsResponse }): ReactElement => {
   const { data } = props;
 
   const days = ["L", "M", "M", "J", "V", "S", "D"];

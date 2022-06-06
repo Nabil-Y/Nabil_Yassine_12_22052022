@@ -1,6 +1,12 @@
 //Custom types and interfaces used in the app
 
 import { ReactNode } from "react";
+import {
+  ActivityResponse,
+  MainDataResponse,
+  PerformanceResponse,
+  SessionsResponse,
+} from "./Classes";
 
 /**
  * Custom interface for card and icon card props typing
@@ -20,10 +26,10 @@ export interface cardProps {
  * Custom Interface for all userData fetched from API
  */
 export interface userData {
-  MainData?: userMainData | undefined;
-  Performance?: userPerformance | undefined;
-  Sessions?: userSessions | undefined;
-  Activity?: userActivity | undefined;
+  MainData?: MainDataResponse | undefined;
+  Performance?: PerformanceResponse | undefined;
+  Sessions?: SessionsResponse | undefined;
+  Activity?: ActivityResponse | undefined;
 }
 
 /**

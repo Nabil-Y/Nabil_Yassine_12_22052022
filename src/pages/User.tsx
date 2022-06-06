@@ -11,7 +11,7 @@ import {
   userMainData,
   userPerformance,
   userSessions,
-} from "../customInterfaces";
+} from "../utils/customInterfaces";
 import Error from "./Error";
 
 /**

@@ -9,13 +9,14 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
-import { userActivity } from "../../../customInterfaces";
+import { userActivity } from "../../../utils/customInterfaces";
+import { ActivityResponse } from "../../../utils/Classes";
 
 /**
  * MainChart
  * @returns Main Chart component
  */
-const MainChart = (props: { data: userActivity }): ReactElement => {
+const MainChart = (props: { data: ActivityResponse }): ReactElement => {
   const { data } = props;
 
   const formattedData = data.sessions?.map((item, index) => {
