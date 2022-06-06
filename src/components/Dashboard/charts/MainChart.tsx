@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { ActivityResponse } from "../../../utils/Classes";
 import styles from "./MainChart.module.css";
 import {
   Bar,
@@ -9,11 +10,10 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
-import { userActivity } from "../../../utils/customInterfaces";
-import { ActivityResponse } from "../../../utils/Classes";
 
 /**
  * MainChart
+ * @param props user activity data
  * @returns Main Chart component
  */
 const MainChart = (props: { data: ActivityResponse }): ReactElement => {

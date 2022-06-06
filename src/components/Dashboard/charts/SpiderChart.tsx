@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { PerformanceResponse } from "../../../utils/Classes";
 import {
   Radar,
   RadarChart,
@@ -6,11 +7,10 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
-import { userPerformance } from "../../../utils/customInterfaces";
-import { PerformanceResponse } from "../../../utils/Classes";
 
 /**
  * SpiderChart Function
+ * @param props  contains user Performance data
  * @returns Spider Chart component
  */
 const SpiderChart = (props: { data: PerformanceResponse }): ReactElement => {

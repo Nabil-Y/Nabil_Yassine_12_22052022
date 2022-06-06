@@ -1,4 +1,6 @@
 import { ReactElement } from "react";
+import { SessionsResponse } from "../../../utils/Classes";
+import styles from "./SessionsChart.module.css";
 import {
   Line,
   LineChart,
@@ -7,11 +9,10 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
-import styles from "./SessionsChart.module.css";
-import { userSessions } from "../../../utils/customInterfaces";
-import { SessionsResponse } from "../../../utils/Classes";
+
 /**
  * LineChart Function
+ * @param props contains user sessions data
  * @returns Line Chat component
  */
 const SessionsChart = (props: { data: SessionsResponse }): ReactElement => {
@@ -27,10 +28,10 @@ const SessionsChart = (props: { data: SessionsResponse }): ReactElement => {
 
   return (
     <>
-      <span className={styles.title}>
+      <h3 className={styles.title}>
         Durée moyenne des <br />
         sessions
-      </span>
+      </h3>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={formattedData}

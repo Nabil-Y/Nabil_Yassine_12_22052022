@@ -8,18 +8,18 @@ import { Link } from "react-router-dom";
 const Home = (): ReactElement => {
   return (
     <main>
-      <h1>Welcome to Sportsee</h1>
+      <h1>Bienvenue sur Sportsee</h1>
       <nav>
         <ul>
           <li>
-            <Link to={"/user/12"}>Click here for user 12 data</Link>
+            <Link to={"/user/12"}>Cliquez ici pour l'utilisateur 12</Link>
           </li>
           <li>
-            <Link to={"/user/18"}>Click here for user 18 data</Link>
+            <Link to={"/user/18"}>Cliquez ici pour l'utilisateur 18</Link>
           </li>
           <li>
-            <a href="/docs/index.html">
-              Click here for the developer documentation
+            <a href="https://nabil-y.github.io/ny-sportsee-doc/">
+              Cliquez ici pour la documentation de devéloppeur
             </a>
           </li>
         </ul>

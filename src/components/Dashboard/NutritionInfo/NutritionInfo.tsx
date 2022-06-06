@@ -1,14 +1,12 @@
 import { ReactElement } from "react";
-import { useParams } from "react-router-dom";
-import API from "../../../utils/API";
+import { MainDataResponse } from "../../../utils/Classes";
 import NutritionCard from "./NutritionCard";
 import icons from "../../../assets/nutrition-icons/NutritionIcons";
 import styles from "./NutritionInfo.module.css";
-import { userMainData } from "../../../utils/customInterfaces";
-import { MainDataResponse } from "../../../utils/Classes";
 
 /**
  * NutritionInfo Function
+ * @param props contains User MainData
  * @returns Nutrition Info Component
  */
 const NutritionInfo = (props: { data: MainDataResponse }): ReactElement => {

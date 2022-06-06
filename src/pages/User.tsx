@@ -5,13 +5,7 @@ import Welcome from "../components/Welcome/Welcome";
 import Dashboard from "../components/Dashboard/Dashboard";
 import CustomAPI from "../utils/API";
 import Loader from "./Loader";
-import {
-  userActivity,
-  userData,
-  userMainData,
-  userPerformance,
-  userSessions,
-} from "../utils/customInterfaces";
+import { userData } from "../utils/customInterfaces";
 import Error from "./Error";
 
 /**
@@ -68,7 +62,7 @@ const User = (): ReactElement => {
 
   if (isLoading) {
     return <Loader />;
-  } else if (isAPI && userData?.MainData === undefined) {
+  } else if (userData?.MainData?.userInfos?.firstName === undefined) {
     return <Error />;
   } else {
     return (

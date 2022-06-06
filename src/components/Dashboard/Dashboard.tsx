@@ -1,15 +1,14 @@
 import { ReactElement } from "react";
+import { userData } from "../../utils/customInterfaces";
+import Card from "../UI/Card";
 import NutritionInfo from "./NutritionInfo/NutritionInfo";
 import MainChart from "./charts/MainChart";
-import styles from "./Dashboard.module.css";
-import Card from "../UI/Card";
 import SessionsChart from "./charts/SessionsChart";
 import SpiderChart from "./charts/SpiderChart";
 import RadialChart from "./charts/RadialChart";
-import { userData } from "../../utils/customInterfaces";
+import styles from "./Dashboard.module.css";
 
 /**
- * /**
  * Dashboard Function
  * @param props contains all user data
  * @returns Dashboard Component
@@ -19,7 +18,7 @@ const Dashboard = (props: { userData: userData }): ReactElement => {
   const bottomCharts: [ReactElement, string][] = [
     [<SessionsChart data={Sessions!} />, "sessions-chart"],
     [<SpiderChart data={Performance!} />, "spider-chart"],
-    [<RadialChart data={MainData!} />, "radial-chart"],
+    [<RadialChart score={MainData?.score} />, "radial-chart"],
   ];
   return (
     <div className={styles.dashboard}>

@@ -1,25 +1,28 @@
 import { ReactElement } from "react";
 import { ResponsiveContainer, PieChart, Pie } from "recharts";
 import styles from "./RadialChart.module.css";
-import { userMainData } from "../../../utils/customInterfaces";
-import { MainDataResponse } from "../../../utils/Classes";
 
 /**
  * RadialChart Function
+ * @param props contains user score
  * @returns Radial Chart component
  */
-const RadialChart = (props: { data: MainDataResponse }): ReactElement => {
-  const { data } = props;
-  const userScore: number | undefined = data?.score;
+const RadialChart = (props: { score: number | undefined }): ReactElement => {
+  const { score } = props;
   const formattedData = [
     {
       name: "Score",
-      value: userScore,
+      value: score,
     },
   ];
 
   return (
     <>
+      <h3 className={styles.kpi}>Score</h3>
+      <div className={styles.label}>
+        <span className={styles.score}>{`${score ? score * 100 : "0"} %`}</span>
+        <br /> de votre <br /> objectif
+      </div>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
@@ -30,18 +33,11 @@ const RadialChart = (props: { data: MainDataResponse }): ReactElement => {
             innerRadius="65%"
             outerRadius="75%"
             startAngle={90}
-            endAngle={userScore ? 90 + userScore * 360 : 0}
+            endAngle={score ? 90 + score * 360 : 0}
             cornerRadius="50%"
           />
         </PieChart>
       </ResponsiveContainer>
-      <span className={styles.kpi}>Score</span>
-      <div className={styles.label}>
-        <span className={styles.score}>{`${
-          userScore ? userScore * 100 : "0"
-        } %`}</span>
-        <br /> de votre <br /> objectif
-      </div>
     </>
   );
 };

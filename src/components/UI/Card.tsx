@@ -6,7 +6,8 @@ import { cardProps } from "../../utils/customInterfaces";
  * @param props Component properties
  * @returns Card Component
  */
-const Card = ({ className, children }: cardProps): ReactElement => {
+const Card = (props: cardProps): ReactElement => {
+  const { className, children } = props;
   const classes: string = `${styles.card} ${className}`;
   return <div className={classes}>{children}</div>;
 };
