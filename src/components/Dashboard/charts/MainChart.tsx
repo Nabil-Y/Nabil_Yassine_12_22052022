@@ -1,6 +1,4 @@
 import { ReactElement } from "react";
-import { useParams } from "react-router-dom";
-import API from "../../../utils/API";
 import styles from "./MainChart.module.css";
 import {
   Bar,
@@ -11,15 +9,16 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
+import { userActivity } from "../../../customInterfaces";
 
 /**
  * MainChart
  * @returns Main Chart component
  */
-const MainChart = (): ReactElement => {
-  const { userId } = useParams() as { userId: string };
-  const response = API.getUserActivityById(+userId);
-  const formattedData = response.sessions?.map((item, index) => {
+const MainChart = (props: { data: userActivity }): ReactElement => {
+  const { data } = props;
+
+  const formattedData = data.sessions?.map((item, index) => {
     return {
       ...item,
       day: index + 1,

@@ -3,7 +3,7 @@ import {
   userActivity,
   userPerformance,
   userSessions,
-} from "../customTypes";
+} from "../customInterfaces";
 
 /**
  * Model Class to format User Main Data Response from API

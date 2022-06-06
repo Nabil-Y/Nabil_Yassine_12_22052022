@@ -1,17 +1,15 @@
 import { ReactElement } from "react";
-import { useParams } from "react-router-dom";
-import API from "../../../utils/API";
 import { ResponsiveContainer, PieChart, Pie } from "recharts";
 import styles from "./RadialChart.module.css";
+import { userMainData } from "../../../customInterfaces";
 
 /**
  * RadialChart Function
  * @returns Radial Chart component
  */
-const RadialChart = (): ReactElement => {
-  const { userId } = useParams() as { userId: string };
-  const response = API.getUserMainDataById(+userId);
-  const userScore: number | undefined = response?.getScore();
+const RadialChart = (props: { data: userMainData }): ReactElement => {
+  const { data } = props;
+  const userScore: number | undefined = data?.score;
   const formattedData = [
     {
       name: "Score",

@@ -1,0 +1,17 @@
+{
+  "data": {
+    "id": 12,
+    "userInfos": {
+      "firstName": "Barack",
+      "lastName": "Odama",
+      "age": 41
+    },
+    "score": 0.2,
+    "keyData": {
+      "calorieCount": 2030,
+      "proteinCount": 215,
+      "carbohydrateCount": 260,
+      "lipidCount": 60
+    }
+  }
+}

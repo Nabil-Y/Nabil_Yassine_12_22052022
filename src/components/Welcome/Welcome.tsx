@@ -1,16 +1,13 @@
 import { ReactElement } from "react";
-import API from "../../utils/API";
-import { useParams } from "react-router-dom";
 import styles from "./Welcome.module.css";
 
 /**
- * Welcome Function
+ *  * Welcome Function
+ * @param props contains firstName key
  * @returns Welcome Component (top section of main tag)
  */
-const Welcome = (): ReactElement => {
-  const { userId } = useParams() as { userId: string };
-  const response = API.getUserMainDataById(+userId);
-  const firstName = response?.getFirstName();
+const Welcome = (props: { firstName: string }): ReactElement => {
+  const { firstName } = props;
 
   return (
     <section className={styles.welcome}>

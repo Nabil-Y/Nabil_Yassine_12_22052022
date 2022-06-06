@@ -17,6 +17,16 @@ export interface cardProps {
 }
 
 /**
+ * Custom Interface for all userData fetched from API
+ */
+export interface userData {
+  MainData?: userMainData | undefined;
+  Performance?: userPerformance | undefined;
+  Sessions?: userSessions | undefined;
+  Activity?: userActivity | undefined;
+}
+
+/**
  * Custom interface for API response of User Performance
  */
 export interface userPerformance {

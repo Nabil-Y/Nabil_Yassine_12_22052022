@@ -1,6 +1,4 @@
 import { ReactElement } from "react";
-import { useParams } from "react-router-dom";
-import API from "../../../utils/API";
 import {
   Line,
   LineChart,
@@ -10,19 +8,19 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import styles from "./SessionsChart.module.css";
+import { userSessions } from "../../../customInterfaces";
 /**
  * LineChart Function
  * @returns Line Chat component
  */
-const SessionsChart = (): ReactElement => {
-  const { userId } = useParams() as { userId: string };
-  const response = API.getUserAverageSessionsById(+userId);
+const SessionsChart = (props: { data: userSessions }): ReactElement => {
+  const { data } = props;
 
   const days = ["L", "M", "M", "J", "V", "S", "D"];
   const formattedData = days.map((item, index) => {
     return {
       name: item,
-      value: response.sessions![index].sessionLength,
+      value: data.sessions![index].sessionLength,
     };
   });
 

@@ -1,6 +1,4 @@
 import { ReactElement } from "react";
-import { useParams } from "react-router-dom";
-import API from "../../../utils/API";
 import {
   Radar,
   RadarChart,
@@ -8,16 +6,16 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
+import { userPerformance } from "../../../customInterfaces";
 
 /**
  * SpiderChart Function
  * @returns Spider Chart component
  */
-const SpiderChart = (): ReactElement => {
-  const { userId } = useParams() as { userId: string };
-  const response = API.getUserPerformanceById(+userId);
-  const activities = response.getKind();
-  const userPerformance = response.getData();
+const SpiderChart = (props: { data: userPerformance }): ReactElement => {
+  const { data } = props;
+  const activities = data.kind;
+  const userPerformance = data.data;
 
   const formattedData = userPerformance?.map((item) => {
     return {

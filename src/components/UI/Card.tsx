@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import styles from "./Card.module.css";
-import { cardProps } from "../../customTypes";
+import { cardProps } from "../../customInterfaces";
 /**
  * Card UI Function
  * @param props Component properties

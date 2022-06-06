@@ -4,15 +4,15 @@ import API from "../../../utils/API";
 import NutritionCard from "./NutritionCard";
 import icons from "../../../assets/nutrition-icons/NutritionIcons";
 import styles from "./NutritionInfo.module.css";
+import { userMainData } from "../../../customInterfaces";
 
 /**
  * NutritionInfo Function
  * @returns Nutrition Info Component
  */
-const NutritionInfo = (): ReactElement => {
-  const { userId } = useParams() as { userId: string };
-  const userKeyData: Record<string, number> | undefined =
-    API.getUserMainDataById(+userId)?.keyData;
+const NutritionInfo = (props: { data: userMainData }): ReactElement => {
+  const { data } = props;
+  const userKeyData = data.keyData;
 
   const iconLabels: string[] = [
     "Calories kCal",

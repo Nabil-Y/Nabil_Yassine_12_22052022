@@ -6,21 +6,25 @@ import Card from "../UI/Card";
 import SessionsChart from "./charts/SessionsChart";
 import SpiderChart from "./charts/SpiderChart";
 import RadialChart from "./charts/RadialChart";
+import { userData } from "../../customInterfaces";
 
 /**
+ * /**
  * Dashboard Function
+ * @param props contains all user data
  * @returns Dashboard Component
  */
-const Dashboard = (): ReactElement => {
+const Dashboard = (props: { userData: userData }): ReactElement => {
+  const { MainData, Performance, Activity, Sessions } = props.userData;
   const bottomCharts: [ReactElement, string][] = [
-    [<SessionsChart />, "sessions-chart"],
-    [<SpiderChart />, "spider-chart"],
-    [<RadialChart />, "radial-chart"],
+    [<SessionsChart data={Sessions!} />, "sessions-chart"],
+    [<SpiderChart data={Performance!} />, "spider-chart"],
+    [<RadialChart data={MainData!} />, "radial-chart"],
   ];
   return (
     <div className={styles.dashboard}>
       <div className={styles["dashboard-left"]}>
-        <MainChart />
+        <MainChart data={Activity!} />
         <div className={styles["bottom-charts"]}>
           {bottomCharts.map((item) => (
             <Card
@@ -32,7 +36,7 @@ const Dashboard = (): ReactElement => {
           ))}
         </div>
       </div>
-      <NutritionInfo />
+      <NutritionInfo data={MainData!} />
     </div>
   );
 };

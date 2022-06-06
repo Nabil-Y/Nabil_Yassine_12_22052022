@@ -1,66 +1,94 @@
-import data from "./mock-data";
-import {
-  userMainData,
-  userActivity,
-  userPerformance,
-  userSessions,
-} from "../customTypes";
 import {
   MainDataResponse,
   PerformanceResponse,
   SessionsResponse,
   ActivityResponse,
 } from "./Classes";
+import axios from "axios";
 
 /**
- * Gets User Main Data by user id
- * @param id User id
- * @returns User data
+ * API class with getter functions
  */
-const getUserMainDataById = (id: Number) => {
-  const filteredData: userMainData | undefined = data.USER_MAIN_DATA.filter(
-    (user) => user.id === id
-  ).shift();
-  return new MainDataResponse(filteredData);
-};
+export default class API {
+  public route;
 
-/**
- * Gets User Activity by user id
- * @param id User id
- * @returns User activity
- */
-const getUserActivityById = (id: Number) => {
-  const filteredData: userActivity | undefined = data.USER_ACTIVITY.filter(
-    (user) => user.userId === id
-  ).shift();
-  return new ActivityResponse(filteredData);
-};
+  constructor() {
+    this.route = "http://localhost:3000";
+  }
 
-/**
- * Gets User Average Sessions by user id
- * @param id User id
- * @returns User average sessions
- */
-const getUserAverageSessionsById = (id: Number) => {
-  const filteredData: userSessions | undefined =
-    data.USER_AVERAGE_SESSIONS.filter((user) => user.userId === id).shift();
-  return new SessionsResponse(filteredData);
-};
+  /**
+   * Get User Main Data By Id Function
+   * @param userId User Id to filter data
+   * @param isApi If true, gets data from API
+   * @returns User Main Data by Id
+   */
+  async getUserMainDataByID(userId: number | string, isApi: boolean) {
+    try {
+      const url = isApi
+        ? `${this.route}/user/${+userId}`
+        : "../../Mock-data/User-MainData.json";
+      const response = await axios.get(url);
+      const data = await response.data.data;
+      return new MainDataResponse(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
-/**
- * Gets User Performance by user id
- * @param id User id
- * @returns User performance
- */
-const getUserPerformanceById = (id: Number) => {
-  const filteredData: userPerformance | undefined =
-    data.USER_PERFORMANCE.filter((user) => user.userId === id).shift();
-  return new PerformanceResponse(filteredData);
-};
+  /**
+   * Get User Performance Data By Id Function
+   * @param userId User Id to filter data
+   * @param isApi If true, gets data from API
+   * @returns User Performance Data by Id
+   */
+  async getUserPerformanceByID(userId: number | string, isApi: boolean) {
+    try {
+      const url = isApi
+        ? `${this.route}/user/${+userId}/performance`
+        : "../../public/Mock-data/User-Performance.json";
+      const response = await axios.get(url);
+      const data = await response.data.data;
+      return new PerformanceResponse(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
-export default {
-  getUserMainDataById,
-  getUserActivityById,
-  getUserAverageSessionsById,
-  getUserPerformanceById,
-};
+  /**
+   * Get User Sessions Data By Id Function
+   * @param userId User Id to filter data
+   * @param isApi If true, gets data from API
+   * @returns User Sessions Data by Id
+   */
+  async getUserSessionsByID(userId: number | string, isApi: boolean) {
+    try {
+      const url = isApi
+        ? `${this.route}/user/${+userId}/average-sessions`
+        : "../../Mock-data/User-Sessions.json";
+      const response = await axios.get(url);
+      const data = await response.data.data;
+      return new SessionsResponse(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  /**
+   * Get User Activity Data By Id Function
+   * @param userId User Id to filter data
+   * @param isApi If true, gets data from API
+   * @returns User Activity Data by Id
+   */
+  async getUserActivityByID(userId: number | string, isApi: boolean) {
+    try {
+      const url = isApi
+        ? `${this.route}/user/${+userId}/activity`
+        : "../../Mock-data/User-Activity.json";
+      const response = await axios.get(url);
+      const data = await response.data.data;
+      return new ActivityResponse(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
