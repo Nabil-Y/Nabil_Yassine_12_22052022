@@ -1,0 +1,17 @@
+{
+  "data": {
+    "id": 18,
+    "userInfos": {
+      "firstName": "Cécilio",
+      "lastName": "Ratorez",
+      "age": 34
+    },
+    "score": 0.45,
+    "keyData": {
+      "calorieCount": 2400,
+      "proteinCount": 120,
+      "carbohydrateCount": 200,
+      "lipidCount": 80
+    }
+  }
+}
