@@ -16,8 +16,8 @@ import styles from "./Dashboard.module.css";
 const Dashboard = (props: { userData: userData }): ReactElement => {
   const { MainData, Performance, Activity, Sessions } = props.userData;
   const bottomCharts: [ReactElement, string][] = [
-    [<SessionsChart data={Sessions!} />, "sessions-chart"],
-    [<SpiderChart data={Performance!} />, "spider-chart"],
+    [<SessionsChart data={Sessions} />, "sessions-chart"],
+    [<SpiderChart data={Performance} />, "spider-chart"],
     [<RadialChart score={MainData?.score} />, "radial-chart"],
   ];
   return (
@@ -35,7 +35,7 @@ const Dashboard = (props: { userData: userData }): ReactElement => {
           ))}
         </div>
       </div>
-      <NutritionInfo data={MainData!} />
+      <NutritionInfo data={MainData} />
     </div>
   );
 };

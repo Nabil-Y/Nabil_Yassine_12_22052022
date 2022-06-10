@@ -19,7 +19,7 @@ import {
 const MainChart = (props: { data: ActivityResponse }): ReactElement => {
   const { data } = props;
 
-  const formattedData = data.sessions?.map((item, index) => {
+  const formattedData = data?.sessions?.map((item, index) => {
     return {
       ...item,
       day: index + 1,

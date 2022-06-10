@@ -9,9 +9,11 @@ import styles from "./NutritionInfo.module.css";
  * @param props contains User MainData
  * @returns Nutrition Info Component
  */
-const NutritionInfo = (props: { data: MainDataResponse }): ReactElement => {
+const NutritionInfo = (props: {
+  data: MainDataResponse | undefined;
+}): ReactElement => {
   const { data } = props;
-  const userKeyData = data.keyData;
+  const userKeyData = data?.keyData;
 
   const iconLabels: string[] = [
     "Calories kCal",

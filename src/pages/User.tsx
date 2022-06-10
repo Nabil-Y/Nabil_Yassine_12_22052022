@@ -1,4 +1,4 @@
-import { ReactElement, useLayoutEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Context from "../store/data-context";
 import Welcome from "../components/Welcome/Welcome";
@@ -34,9 +34,7 @@ const User = (): ReactElement => {
     await API.getUserMainDataByID(userId, isAPI).then((data) => {
       const userName = data?.userInfos?.firstName;
       userName && setFirstName(userName);
-      setUserData((prevState) => {
-        return { ...prevState, MainData: data };
-      });
+      setUserData({ MainData: data });
     });
     await API.getUserPerformanceByID(userId, isAPI).then((data) =>
       setUserData((prevState) => {
@@ -56,7 +54,7 @@ const User = (): ReactElement => {
     setIsLoading(false);
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     getUserData();
   }, [isAPI]);
 
@@ -72,7 +70,7 @@ const User = (): ReactElement => {
             {isAPI ? "API" : "Mock"}
           </button>
           <Welcome firstName={firstName} />
-          <Dashboard userData={userData!} />
+          <Dashboard userData={userData} />
         </Context.Provider>
       </main>
     );

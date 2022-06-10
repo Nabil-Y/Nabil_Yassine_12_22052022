@@ -13,10 +13,12 @@ import {
  * @param props  contains user Performance data
  * @returns Spider Chart component
  */
-const SpiderChart = (props: { data: PerformanceResponse }): ReactElement => {
+const SpiderChart = (props: {
+  data: PerformanceResponse | undefined;
+}): ReactElement => {
   const { data } = props;
-  const activities = data.kind;
-  const userPerformance = data.data;
+  const activities = data?.kind;
+  const userPerformance = data?.data;
 
   const formattedData = userPerformance?.map((item) => {
     return {

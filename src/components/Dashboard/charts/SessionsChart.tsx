@@ -15,14 +15,16 @@ import {
  * @param props contains user sessions data
  * @returns Line Chat component
  */
-const SessionsChart = (props: { data: SessionsResponse }): ReactElement => {
+const SessionsChart = (props: {
+  data: SessionsResponse | undefined;
+}): ReactElement => {
   const { data } = props;
 
   const days = ["L", "M", "M", "J", "V", "S", "D"];
   const formattedData = days.map((item, index) => {
     return {
       name: item,
-      value: data.sessions![index].sessionLength,
+      value: data?.sessions![index].sessionLength,
     };
   });
 
