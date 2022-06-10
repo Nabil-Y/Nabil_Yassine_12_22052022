@@ -17,7 +17,7 @@ const HorizontalNavbar = (): ReactElement => {
           <li>
             <Link to="/">Accueil</Link>
           </li>
-          {navListItems.map<ReactElement>((item) => (
+          {navListItems.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>

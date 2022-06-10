@@ -11,7 +11,7 @@ const VerticalNavbar = (): ReactElement => {
   return (
     <section className={styles["side-navbar"]}>
       <nav className={styles["icon-cards-container"]}>
-        {icons.map<ReactElement>((svg) => (
+        {icons.map((svg) => (
           <IconCard key={svg} className={styles["side-icon-card"]}>
             <img src={svg} alt={svg.slice(svg.lastIndexOf("/") + 1)} />
           </IconCard>
